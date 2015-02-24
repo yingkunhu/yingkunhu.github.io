@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html>
-<body>
-<h1>Hello, Welcome!</h1>
-</body>
+    <head>
+        <title>Yingkun's HomePage</title>
+        <link rel="stylesheet" href="jquery-ui-1.11.3/jquery-ui.css">
+        <script src="jquery-ui-1.11.3/external/jquery/jquery.js"></script>
+        <script src="jquery-ui-1.11.3/jquery-ui.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#divTabs").tabs();
+            });
+        </script>
+    </head>
+    <body>
+        <h1>Hello! Welcome!</h1>
+        <div id="divTabs">
+            <ul>
+                <li><a href="#tab1">Tab 1</a></li>
+                <li><a href="#tab2">Tab 2</a></li>
+            </ul>
+            <div id="tab1">
+                <p>Hello</p>
+            </div>
+            <div id="tab2">
+                <p>World</p>
+            </div>
+        </div>
+    </body>
 </html>
