@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="description" content="Display Basic Colors">
+        <meta charset="utf-8">
+        <title>Display Basic Colors</title>
+        <style>
+            td{
+                text-align: center;
+                font-family: Tohoma;
+                font-size: 1.5em;
+                padding: 10px;
+                border: solid 1px gray;
+                margin:1px;
+                
+            }
+            #white{
+                background-color: white;
+            }
+            #silver{
+                background-color: silver;
+            }
+            #gray{
+                background-color: gray;
+            }
+            #black{
+                background-color: black;
+                color:white;
+            }
+            #R50{
+                background-color: maroon;
+                color:white;
+            }
+            #R100{
+                background-color: red;
+                color:white;
+            }
+            #G50{
+                background-color: green;
+                color:white;
+            }
+            #G100{
+                background-color: lime;
+                color:white;
+            }
+            #B50{
+                background-color: navy;
+                color:white;
+            }
+            #B100{
+                background-color: blue;
+                color:white;
+            }
+            #RG50{
+                background-color: RGB(50%,50%,0%);
+                color:black;
+                
+            }
+            #RG100{
+                background-color: RGB(100%,100%,0%);
+                color:black;
+            }
+            #RB50{
+                background-color: RGB(50%,0%,50%);
+                color:black;
+            }
+            #RB100{
+                background-color: RGB(100%,0%, 100%);
+                color:black;
+            }
+            #GB50{
+                background-color: RGB(0%,50%,50%);
+                color:white;
+            }
+            #GB100{
+                background-color: RGB(0%, 100%,100%);
+                color:black;
+            }
+            td>span{
+                color:transparent;
+            }
+        </style>
+        <script>
+            window.onload=function(){
+                console.log("onload");
+                var spans=document.querySelectorAll("td>span");
+                console.log("register sp event");
+                Array.prototype.forEach.call(spans, function(x){
+                        x.addEventListener("mousedown", function(e){
+                            console.log("mouse down ");
+                            e.toElement.style.color="inherit";
+                            }, false);
+                    });
+            };
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td id="white"><span>White ,RGB(100%, 100%, 100%)</span></td>
+                <td id="silver"><span>Silver ,RGB(75%, 75%, 75%)</span></td>
+                <td id="gray"  width="25%"><span>Gray ,RGB(50%, 50%, 50%)</span></td>
+                <td id="black"  width="25%"><span>Black ,RGB(0%, 0%, 0%)</span></td>
+            </tr>
+            <tr>
+                <td id="R50" colspan="2"><span>Maroon ,RGB(50%, 0%, 0%)</span></td>
+                <td id="R100"  colspan="2"><span>Red ,RGB(100%, 0%, 0%)</span></td>
+            </tr>
+            <tr>
+                <td id="G50" colspan="2"><span>Green ,RGB(0%,50%, 0%)</span></td>
+                <td id="G100"  colspan="2"><span>Lime ,RGB(0%, 100%, 0%)</span></td>
+            </tr>
+            <tr>
+                <td id="B50" colspan="2"><span>Navy ,RGB(0%,0%,50%)</span></td>
+                <td id="B100"  colspan="2"><span>Blue ,RGB(0%,0%,100%)</span></td>
+            </tr>
+            <tr>
+                <td id="RG50" colspan="2"><span>Olive ,RGB(50%, 50%, 0%)</span></td>
+                <td id="RG100"  colspan="2"><span>Yellow ,RGB(100%,100%, 0%)</span></td>
+            </tr>
+            <tr>
+                <td id="RB50" colspan="2"><span>Purple ,RGB(50%, 0%, 50%)</span></td>
+                <td id="RB100"  colspan="2"><span>Fuchsia ,RGB(100%,0%, 100%)</span></td>
+            </tr>
+            <tr>
+                <td id="GB50" colspan="2"><span>Teal ,RGB(0% ,50%, 50%)</span></td>
+                <td id="GB100"  colspan="2"><span>Aqua ,RGB(0%, 100%,100%)</span></td>
+            </tr>
+        </table>
+    </body>
+</html>
